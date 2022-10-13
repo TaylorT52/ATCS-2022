@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<!--Hero page-->
+<html>
+<head>
+    <link href = "style.css" rel="stylesheet" type="text/css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <!--Nav bar-->
+    <section>
+        <h3 id="nav-header">T</h3>
+        <nav>
+            <a id="on-page" href="../hero/index.html">Home</a>
+            <a href="../about/about-me.html">About</a>
+            <a href="../experience/experience.html">Experience</a>
+            <a href="../contact/contact.html">Contact</a>
+        </nav>
+    </section>
+
+    <!--Fun animation :)-->
+    <script>
+        var counter = 0; 
+        let myVar = setInterval(myTimer, 300);
+        let str = "aylor Tam"; 
+        function myTimer() {
+            var currStr = document.getElementById("nav-header").innerHTML; 
+            var add = str.charAt(counter); 
+            document.getElementById("nav-header").innerHTML = currStr + add; 
+            counter += 1;
+            if(counter > str.length){
+                clearInterval(myVar); 
+            }
+        }
+    </script>
+</body>
+</html>

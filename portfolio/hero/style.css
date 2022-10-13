@@ -1,0 +1,46 @@
+nav a{
+    text-decoration: none;
+    font-size: 18px; 
+    display: inline-block; 
+    color: black; 
+    padding: 10px 25px; 
+}
+
+#on-page{
+    text-decoration: underline; 
+}
+
+#nav-header{
+    text-decoration: none;
+}
+
+section > *{
+    display: flex; 
+    justify-content: center;
+}
+
+.grid-container{
+    display: inline-grid; 
+    padding-top: 80px; 
+    padding-left: 10vw; 
+    padding-right: 10vw; 
+    width: 80vw; 
+    grid-template-columns: repeat(3, 3fr);
+    grid-template-rows: repeat(2, 25vh); 
+}
+
+.grid-item{
+    margin: auto;
+}
+
+.grid-item > p{
+    font-size: 18px; 
+}
+
+.contact-img{
+    display: block;
+    max-width:15vw;
+    max-height:30vh;
+    width: auto;
+    height: auto;
+}
