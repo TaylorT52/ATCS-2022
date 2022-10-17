@@ -13,23 +13,24 @@
         <nav>
             <a id="on-page" href="../hero/index.html">Home</a>
             <a href="../about/about-me.html">About</a>
-            <a href="../experience/experience.html">Experience</a>
             <a href="../contact/contact.html">Contact</a>
         </nav>
     </section>
 
     <!--Fun animation :)-->
     <script>
-        var counter = 0; 
-        let myVar = setInterval(myTimer, 300);
-        let str = "aylor Tam"; 
-        function myTimer() {
-            var currStr = document.getElementById("nav-header").innerHTML; 
-            var add = str.charAt(counter); 
-            document.getElementById("nav-header").innerHTML = currStr + add; 
-            counter += 1;
-            if(counter > str.length){
-                clearInterval(myVar); 
+        var nameElement = document.getElementById("nav-header"); 
+        var nameCounter = 0;
+        let nameTimer = setInterval(nameFunc, 300);
+        let nameStr = "aylor Tam"; 
+        
+        function nameFunc() {
+            var currStr = nameElement.innerHTML; 
+            var add = nameStr.charAt(nameCounter); 
+            nameElement.innerHTML = currStr + add; 
+            nameCounter += 1;
+            if(nameCounter > nameStr.length){
+                clearInterval(nameTimer); 
             }
         }
     </script>

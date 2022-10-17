@@ -7,14 +7,135 @@
     <title>Portfolio</title>
 </head>
 <body>
+    <!--Nav bar-->
     <section>
         <h3 id="nav-header">Taylor Tam</h3>
         <nav>
             <a href="../hero/index.html">Home</a>
             <a id="on-page" href="../about/about-me.html">About</a>
-            <a href="../experience/experience.html">Experience</a>
             <a href="../contact/contact.html">Contact</a>
         </nav>
     </section>
+
+    <div class="about-grid-container">
+        <div class="a-grid-item"><img id="a-img" src="../images/profile-pic.jpeg"></div>
+        <div class="a-grid-item">
+            <br><br><br> 
+            <p>Hi, I'm Taylor! I'm currently student at Menlo School in Atherton, CA. 
+                I enjoy playing electric guitar, running cross country, 
+                and rewatching the Simpsons (Lisa is my spirit animal). Some 
+                of my favorite books include <i>The Glass Castle</i> by Jeanette Walls,   
+                <i>Hitchhiker's Guide</i> to the Galaxy by Douglas Adams, and All the  
+                <i>Light We Cannot See</i> by Anthony Doerr. 
+                <br><br>
+                I'm also an avid Star Wars fan and a favorite pasttime of mine is programming old Atari games in Java.
+                The first thing I programmed was a Flappy Bird game in JS, and some other cool
+                games I've made are Dig Dug, Pac-man, and Space Invaders (maybe a waste of time but fun 😄).
+                <br><br>
+                See experience below!
+            </p>
+        </div>
+    </div>
+    <div class="recent-education show-on-scroll">
+        <h3>Education</h3>
+        <div class="ed-grid">
+            <div class="ed-grid-item">
+                <img src="../images/menlo-logo.png">
+            </div>
+            <div class="ed-grid-item">
+                <p>Menlo School, Class of 2024 :)</p>
+            </div>
+        </div>
+        <br>
+        <h3>Recent</h3>
+        <a href="https://stanfordaimi.medium.com/radiology-and-resnets-our-summer-internship-experience-with-aimi-abda196494d7">Medium - Radiology and Resnets: Our Internship Experience With AIMI</a>
+    </div>
+    <br>
+    <div class="experience">
+        <h3 class="show-on-scroll">Experience</h3>
+        <p class="show-on-scroll">
+            <span>Stanford AIMI Intern <i>(Jun 2022 - Current)</i></span><br>
+            I'm currently working on a project with Stanford AIMI on making education around machine
+            learning more digestable and accessible to highschool students. I've been working with 
+            a couple other interns on creating lesson plans on topics such as an introduction to 
+            neural networks, transfer learning, and YOLO. We've been creating a website with these lessons 
+            as well as exercises and applications.
+            <br><br>
+            Over the summer, I worked on developing a CNN which detected medical devices in chest x-rays with
+            97% accuracy and used YOLO to draw bounding boxes around them.
+        </p>
+        <p class="show-on-scroll">
+            <span>Melcher Lab (Stanford) Employee <i>(March 2022 - Current)</i></span><br>
+            There are two projects I've worked on with the Melcher lab. I wrote scripts to identify
+            whether microscope images were usable (working off blurriness and tissue area in an image). I've 
+            also been working on creating a GUI for a steatosis analyzer. 
+            <br><br>
+            Another project I've been working on is developing a suturing simulation on an Oculus. I've had a 
+            lot of fun learning how to use Unity and Blender!
+        </p>
+        <p class="show-on-scroll">
+            <span>FTC Robotics Lead Software Engineer <i>(August 2021 - Current</i>)</span><br>
+            I am the lead software engineer for the InZain bots, which participates in FIRST robotics 
+            competitions. I'm responsible for writing programs such as our heading follower 
+            (a kinematics optimization), autonomous driving, and object identification. We placed
+            5th in NorCal for the 2021-2022 season.
+        </p>
+        <p class="show-on-scroll">
+            <span>WINS (Women In STEM) Leadership Member <i>(June 2022 - Current)</i></span><br>
+            I am one of the founders of WINS, which is a club directed at encouraging women in STEM. One 
+            of our goals is increasing female participation in advanced STEM classes by providing
+            club support through resources, shared study guides for classes, and general encouragement. We
+            are also beginning a mentorship program, where we pair club members with female professionals
+            in their field of interest to provide opportunities for guidance and internships. 
+        </p>
+        <p class="show-on-scroll">
+            <span>Menlo Hacks Planning Team <i>(June 2022 - Current)</i></span><br>
+            I'm helping plan Menlo's Hackathon, which I participated in (2021). 
+        </p>
+        <p class="show-on-scroll">
+            <span>MakerDAO Summer Intern <i>(June 2022 - September 2022)</i></span><br>
+            I interned for MakerDAO over the summer. I wrote scripts which automatically
+            updated data on crypto KPIs and created a front-end to display them. I also 
+            learned about a bit about Solidity.  
+        </p>
+        <p class="show-on-scroll">
+            <span>MBEST (Women In STEM) Leadership Member <i>(August 2021 - June 2022)</i></span><br>
+            I was a member of Menlo School’s MBEST leadership team, a club which is aimed at encouraging 
+            women in STEM. My responsibilities are to help communicate with the student body, 
+            administration, and help plan STEM related workshops.
+        </p>
+    </div>
+    <br>
+    <br>
+    <script>
+        const interval = 200; 
+        const minPos = -350; 
+        var lastScroll = 0; 
+        var triggered = false;
+        var elementsToShow = document.querySelectorAll('.show-on-scroll');
+        elementsToShow = Array.from(elementsToShow); 
+        var scroll = window.requestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60)};
+        
+        window.addEventListener('scroll', () => {
+            var test = document.documentElement.getBoundingClientRect().top; 
+            if(test < minPos){
+                if(!triggered){
+                    show(elementsToShow); 
+                }
+            }
+            lastScroll = test; 
+        })
+
+        function show(arr) {
+            if (arr.length === 0) {
+                return;
+            }
+            arr[0].style.opacity = 1; 
+
+            setTimeout(() => {
+                show(arr.slice(1));
+            }, interval);  
+        }
+    </script>
 </body>
 </html>
