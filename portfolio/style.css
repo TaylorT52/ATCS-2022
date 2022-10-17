@@ -196,6 +196,10 @@ p{
     font-size: 18px; 
 }
 
+ul{
+    list-style-type: "⭐️  ";
+}
+
 .experience{
     margin-right: 20vw; 
     margin-left: 20vw; 
