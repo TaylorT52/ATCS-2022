@@ -3,11 +3,19 @@ html {
 }
 
 /*Nav*/
+nav{
+    background-color: #F987C5;
+    width: 100vw; 
+    position: fixed;
+    padding: 20px; 
+    margin-top: 0; 
+}
+
 nav a{
     text-decoration: none;
     font-size: 18px; 
     display: inline-block; 
-    color: black; 
+    color: white; 
     padding: 10px 25px; 
 }
 
@@ -15,13 +23,73 @@ nav a{
     text-decoration: underline; 
 }
 
-#nav-header{
-    text-decoration: none;
-}
-
 section > *{
     display: flex; 
     justify-content: center;
+}
+
+/*hero page*/
+.more-about-me{
+    display: inline-grid; 
+    grid-template-columns: repeat(3, 4fr); 
+    grid-template-rows: repeat(2, 50%);
+    width: 80vw;  
+    height: 80vh; 
+    margin: 10vw; 
+    margin-top: 5vh;
+}
+
+h1{
+    width: 12vw; 
+    margin-left: 10vw; 
+    margin-top: 20vh; 
+    background-color: #F987C5;
+    color: white; 
+}
+
+.more-about-comp img{
+    height: 30vh; 
+    width: auto;  
+}
+
+.more-about-comp{
+    display: block; 
+    justify-content: center;
+    margin: auto; 
+    text-align: center;
+}
+
+.hero-main{
+    margin-left: 10vw; 
+    margin-top: 20vh; 
+    display: inline-grid; 
+    grid-template-columns: 3fr 4fr; 
+    column-gap: 5vw;
+}
+
+.hero-grid-comp img{
+    width: 30vw; 
+    height: auto;  
+    border-radius: 50%;
+}
+
+.hero-grid-comp span{
+    font-size: 30px;
+}
+
+.hero-grid-comp { 
+    text-align: center;
+    margin: auto; 
+}
+
+.hero-grid-comp ul{
+    list-style-type: ""; 
+}
+
+.hero-grid-comp span > span{
+    padding: 2px; 
+    background-color:#F987C5; 
+    color: white; 
 }
 
 /*Contact page*/
@@ -53,22 +121,76 @@ section > *{
     display: inline-grid; 
     padding-top: 60px; 
     padding-right: 15vw; 
-    padding-left: 15vw; 
-    padding-bottom: 0px; 
+    padding-left: 15vw;  
     width: 70vw; 
     grid-template-columns: 2fr 3fr; 
-    grid-template-rows: repeat(2, 20vh);
+    grid-template-rows: repeat(2, 14vh);
     column-gap: 25px;
     row-gap: 200px; 
-
 }
+
+.scroll-down {
+    background-color: black;
+    height: 50px;
+    width: 30px;
+    border: 2px solid black;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .scroll-down::before,
+  .scroll-down::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 10px;
+    width: 10px;
+    transform: translate(-50%, -100%) rotate(45deg);
+    border: 2px solid white;
+    border-top: transparent;
+    border-left: transparent;
+    animation: scroll-down 1s ease-in-out infinite;
+  }
+  .scroll-down::before {
+    top: 30%;
+    animation-delay: 0.3s;
+  }
+
+  .scroll-down button{
+    opacity: 0;
+    height: 50px;
+    border-radius: 50px;
+    width: 30px;
+  }
+  
+  @keyframes scroll-down {
+    0% {
+      /* top:20%; */
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      top: 90%;
+      opacity: 0;
+    }
+  }
 
 #a-img{
     margin: auto; 
+    margin-top: 5vh;
     display: block;
-    width:19vw;
-    height:38vh;
+    width:20vw;
+    height:auto;
     border-radius: 50%;
+    border: solid #F987C5 2px; 
 }
 
 #menlo-logo{
@@ -86,6 +208,7 @@ section > *{
 
 /* Education etc */ 
 .recent-education{
+    margin-top: 40vh; 
     margin-right:20vw; 
     margin-left: 20vw; 
 }
@@ -137,7 +260,7 @@ section > *{
     height: 20px;
     width: 20px;
     /*counter #*/
-    background-color: black;
+    background-color: #F987C5;
     text-align:center;
     color: white;
 }
@@ -153,7 +276,7 @@ section > *{
     height: 20px;
     width: 20px;
     /*counter #*/
-    background-color: black;
+    background-color: #F987C5;
     text-align:center;
     color: white;
 }

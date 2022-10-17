@@ -9,18 +9,17 @@
 <body>
     <!--Nav bar-->
     <section>
-        <h3 id="nav-header">Taylor Tam</h3>
         <nav>
             <a href="../hero/index.html">Home</a>
             <a id="on-page" href="../about/about-me.html">About</a>
             <a href="../contact/contact.html">Contact</a>
         </nav>
     </section>
-
     <div class="about-grid-container">
         <div class="a-grid-item"><img id="a-img" src="../images/profile-pic.jpeg"></div>
         <div class="a-grid-item">
             <br><br><br> 
+            <h3>About Me</h3><br>
             <p>Hi, I'm Taylor! I'm currently student at Menlo School in Atherton, CA. 
                 I enjoy playing electric guitar, running cross country, 
                 and rewatching the Simpsons (Lisa is my spirit animal). Some 
@@ -36,8 +35,12 @@
             </p>
         </div>
     </div>
-    <div class="recent-education show-on-scroll">
-        <h3>Education</h3>
+  
+    <div class="scroll-down">
+        <button type="button" onclick="goTo()"></button>
+    </div>
+    <div id="jump-loc" class="recent-education show-on-scroll">
+        <h3>📚 Education</h3>
         <div class="ed-grid">
             <div class="ed-grid-item">
                 <img src="../images/menlo-logo.png">
@@ -47,12 +50,12 @@
             </div>
         </div>
         <br>
-        <h3>Recent</h3>
+        <h3>⏰ Recent</h3>
         <a href="https://stanfordaimi.medium.com/radiology-and-resnets-our-summer-internship-experience-with-aimi-abda196494d7">Medium - Radiology and Resnets: Our Internship Experience With AIMI</a>
     </div>
     <br>
     <div class="experience">
-        <h3 class="show-on-scroll">Experience</h3>
+        <h3 class="show-on-scroll">💻 Experience</h3>
         <p class="show-on-scroll">
             <span>Stanford AIMI Intern <i>(Jun 2022 - Current)</i></span><br>
             I'm currently working on a project with Stanford AIMI on making education around machine
@@ -105,11 +108,12 @@
             administration, and help plan STEM related workshops.
         </p>
     </div>
+ 
     <br>
     <br>
     <script>
         const interval = 200; 
-        const minPos = -350; 
+        const minPos = -500; 
         var lastScroll = 0; 
         var triggered = false;
         var elementsToShow = document.querySelectorAll('.show-on-scroll');
@@ -135,6 +139,10 @@
             setTimeout(() => {
                 show(arr.slice(1));
             }, interval);  
+        }
+
+        function goTo(){
+            document.getElementById("jump-loc").scrollIntoView({behavior: 'smooth'});
         }
     </script>
 </body>
