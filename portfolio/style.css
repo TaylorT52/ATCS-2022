@@ -5,7 +5,7 @@ html {
 /*Nav bar*/
 nav{
     background-color: #F987C5;
-    width: 100vw; 
+    width: 110vw; 
     height: 10vh;
     margin-top: -1vh; 
     margin-left: -1vh; 
@@ -28,7 +28,7 @@ nav a{
     text-decoration: none;
     margin-top: 4vh;
     font-size: 18px; 
-    margin-right: 2vw; 
+    margin-right: 1vw; 
     margin-left: 2vw;  
 }
 
@@ -133,6 +133,10 @@ h1{
     background-color: #F987C5;
     color: white;
     padding: 5px; 
+}
+
+h2{
+    margin-top: 20vh; 
 }
 
 /*******************************ABOUT PAGE*******************************/
