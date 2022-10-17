@@ -2,63 +2,50 @@ html {
     scroll-behavior: smooth;
 }
 
-/*Nav*/
+/*Nav bar*/
 nav{
     background-color: #F987C5;
     width: 100vw; 
+    height: 10vh;
+    margin-top: -1vh; 
+    margin-left: -1vh; 
+    z-index: 1;
     position: fixed;
-    padding: 20px; 
-    margin-top: 0; 
+    vertical-align: center;
+}
+
+nav img{
+    margin-top: 2vh; 
+    margin-left: 3vw; 
+    width: 4vw;
+    height: auto; 
 }
 
 nav a{
-    text-decoration: none;
-    font-size: 18px; 
+    vertical-align: top; 
     display: inline-block; 
-    color: white; 
-    padding: 10px 25px; 
+    color: white;
+    text-decoration: none;
+    margin-top: 4vh;
+    font-size: 18px; 
+    margin-right: 2vw; 
+    margin-left: 2vw;  
 }
 
 #on-page{
     text-decoration: underline; 
 }
 
-section > *{
-    display: flex; 
-    justify-content: center;
-}
-
-/*hero page*/
-.more-about-me{
-    display: inline-grid; 
-    grid-template-columns: repeat(3, 4fr); 
-    grid-template-rows: repeat(2, 50%);
-    width: 80vw;  
-    height: 80vh; 
-    margin: 10vw; 
-    margin-top: 5vh;
-}
-
+/*******************************HERO PAGE*******************************/
 h1{
-    width: 12vw; 
+    width: 20vw; 
     margin-left: 10vw; 
-    margin-top: 20vh; 
+    margin-top: 25vh; 
     background-color: #F987C5;
     color: white; 
 }
 
-.more-about-comp img{
-    height: 30vh; 
-    width: auto;  
-}
-
-.more-about-comp{
-    display: block; 
-    justify-content: center;
-    margin: auto; 
-    text-align: center;
-}
-
+/*Main hero grid*/
 .hero-main{
     margin-left: 10vw; 
     margin-top: 20vh; 
@@ -92,7 +79,31 @@ h1{
     color: white; 
 }
 
-/*Contact page*/
+/*More about me section*/ 
+.more-about-me{
+    display: inline-grid; 
+    grid-template-columns: repeat(3, 4fr); 
+    grid-template-rows: repeat(2, 50%);
+    width: 80vw;  
+    height: 80vh; 
+    margin: 10vw; 
+    margin-top: 5vh;
+}
+
+.more-about-comp img{
+    height: 30vh; 
+    width: auto;  
+}
+
+.more-about-comp{
+    display: block; 
+    justify-content: center;
+    margin: auto; 
+    text-align: center;
+}
+
+/*******************************CONTACT PAGE*******************************/
+/*images*/
 #contact-img{
     display: block;
     max-width:15vw;
@@ -101,13 +112,15 @@ h1{
     height: auto;
 }
 
+/*Grid stuff*/ 
 .contact-grid-container{
+    margin-top: 20vh; 
     display: inline-grid; 
-    padding-top: 80px; 
+    padding-top: 10vh; 
     padding-left: 10vw; 
     padding-right: 10vw; 
     width: 80vw; 
-    grid-template-columns: repeat(3, 3fr);
+    grid-template-columns: repeat(4, 4fr);
     grid-template-rows: repeat(2, 25vh); 
 }
 
@@ -116,89 +129,24 @@ h1{
     font-size: 18px; 
 }
 
-/*About page*/
+.c-grid-item p{
+    background-color: #F987C5;
+    color: white;
+    padding: 5px; 
+}
+
+/*******************************ABOUT PAGE*******************************/
+/*first grid*/
 .about-grid-container{
     display: inline-grid; 
-    padding-top: 60px; 
+    margin-top: 20vh;
     padding-right: 15vw; 
     padding-left: 15vw;  
     width: 70vw; 
     grid-template-columns: 2fr 3fr; 
     grid-template-rows: repeat(2, 14vh);
-    column-gap: 25px;
-    row-gap: 200px; 
-}
-
-.scroll-down {
-    background-color: black;
-    height: 50px;
-    width: 30px;
-    border: 2px solid black;
-    position: absolute;
-    left: 50%;
-    bottom: 20px;
-    border-radius: 50px;
-    cursor: pointer;
-  }
-  .scroll-down::before,
-  .scroll-down::after {
-    content: "";
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    height: 10px;
-    width: 10px;
-    transform: translate(-50%, -100%) rotate(45deg);
-    border: 2px solid white;
-    border-top: transparent;
-    border-left: transparent;
-    animation: scroll-down 1s ease-in-out infinite;
-  }
-  .scroll-down::before {
-    top: 30%;
-    animation-delay: 0.3s;
-  }
-
-  .scroll-down button{
-    opacity: 0;
-    height: 50px;
-    border-radius: 50px;
-    width: 30px;
-  }
-  
-  @keyframes scroll-down {
-    0% {
-      /* top:20%; */
-      opacity: 0;
-    }
-    30% {
-      opacity: 1;
-    }
-    60% {
-      opacity: 1;
-    }
-    100% {
-      top: 90%;
-      opacity: 0;
-    }
-  }
-
-#a-img{
-    margin: auto; 
-    margin-top: 5vh;
-    display: block;
-    width:20vw;
-    height:auto;
-    border-radius: 50%;
-    border: solid #F987C5 2px; 
-}
-
-#menlo-logo{
-    margin: auto; 
-    display: block; 
-    width: 5vw; 
-    height: 10vh; 
-    border-radius: 50%
+    column-gap: 5vw;
+    row-gap: 20vh; 
 }
 
 .a-grid-item{
@@ -206,7 +154,7 @@ h1{
     font-size: 18px; 
 }
 
-/* Education etc */ 
+/* Education grid */ 
 .recent-education{
     margin-top: 40vh; 
     margin-right:20vw; 
@@ -216,11 +164,11 @@ h1{
 .ed-grid{
     display: inline-grid; 
     grid-template-columns: 1fr 5fr; 
-    column-gap: 50px;
+    column-gap: 2vw;
 }
 
 .ed-grid p{
-    margin-top: 30px; 
+    margin-top: 3vh; 
 }
 
 .ed-grid img{
@@ -228,12 +176,24 @@ h1{
     width: 5vw; 
 }
 
-/* Experience section */ 
 .recent-education a{
     display: block; 
     color:black;
     padding: 15px; 
     background-color: ghostwhite;
+}
+
+/* Experience section */
+.show-on-scroll ~ p span{
+    padding-right: 2px;
+    padding-left: 2px; 
+    padding-top: 2px;  
+    background-color: #F987C5;
+    color: white;  
+}
+
+p{
+    font-size: 18px; 
 }
 
 .experience{
@@ -318,4 +278,78 @@ h1{
 
 .elem-fade-in{
     opacity: 1; 
+}
+
+/*Scrolling animation*/
+.scroll-down {
+    background-color: black;
+    height: 50px;
+    width: 30px;
+    border: 2px solid black;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .scroll-down::before,
+  .scroll-down::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 10px;
+    width: 10px;
+    transform: translate(-50%, -100%) rotate(45deg);
+    border: 2px solid white;
+    border-top: transparent;
+    border-left: transparent;
+    animation: scroll-down 1s ease-in-out infinite;
+  }
+  .scroll-down::before {
+    top: 30%;
+    animation-delay: 0.3s;
+  }
+
+  .scroll-down button{
+    opacity: 0;
+    height: 50px;
+    border-radius: 50px;
+    width: 30px;
+  }
+  
+  @keyframes scroll-down {
+    0% {
+      /* top:20%; */
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      top: 90%;
+      opacity: 0;
+    }
+  }
+
+/*images*/
+#a-img{
+    margin: auto; 
+    margin-top: 10vh;
+    display: block;
+    width:20vw;
+    height:auto;
+    border-radius: 50%;
+    border: solid #F987C5 2px; 
+}
+
+#menlo-logo{
+    margin: auto; 
+    display: block; 
+    width: 5vw; 
+    height: 10vh; 
+    border-radius: 50%
 }
