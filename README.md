@@ -1,3 +1,6 @@
 # ATCS-2022
 C block
-Repo for ATCS 2022 :) Projects will go here!
+
+#Project 1 - Portfolio Project
+- HTML / CSS / JS 
+- Home page, experiences, contact
