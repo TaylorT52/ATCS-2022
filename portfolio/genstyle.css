@@ -1,0 +1,25 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/*Nav bar*/
+nav img{
+    width: 4vw;
+    height: auto; 
+}
+
+nav {
+    background-color: #F987C5; 
+}
+
+.nav-link {
+    color: black; 
+}
+
+.nav-link:hover{
+    color: #343434;
+}
+
+.active{
+    text-decoration: underline; 
+}

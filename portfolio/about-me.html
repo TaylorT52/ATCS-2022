@@ -3,161 +3,185 @@
 <!--About me page-->
 <html>
 <head>
-    <link href = "style.css" rel="stylesheet" type="text/css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href = "genstyle.css" rel="stylesheet" type="text/css">
+    <link href = "about.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="images/logo-main.png">
     <title>About Me</title>
 </head>
 <body>
     <!--Nav bar-->
-    <section>
-        <nav>
-            <img src="images/logo-main.png">
-            <a href="index.html">Home</a>
-            <a id="on-page" href="about-me.html">About</a>
-            <a href="contact.html">Contact</a>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html"><img src="images/logo-main.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="about-me.html">About me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                </ul>
+            </div>
         </nav>
-    </section>
-    <div class="about-grid-container">
-        <div class="a-grid-item"><img id="a-img" src="images/profile-pic.jpeg"></div>
-        <div class="a-grid-item">
-            <br><br><br> 
-            <h3>About Me</h3><br>
-            <p>Hi, I'm Taylor! I'm currently student at Menlo School in Atherton, CA. 
-                I enjoy playing electric guitar, running cross country, 
-                and rewatching the Simpsons (Lisa is my spirit animal). Some 
-                of my favorite books include <i>The Glass Castle</i> by Jeanette Walls,   
-                <i>Hitchhiker's Guide</i> to the Galaxy by Douglas Adams, and All the  
-                <i>Light We Cannot See</i> by Anthony Doerr. One of my favorite hobbies is creative writing (I just joined LitMag!).
-                I'm also an avid Star Wars fan :)
-                <br><br>
-                I started programming in third grade, and my first project was a Flappy Bird game. A favorite pasttime of mine is remaking 
-                old Atari games; I've made are Dig Dug, Pac-man, and Space Invaders. Other topics I'm super
-                interested are ML (especially with medical applications), image processing, game dev, and VR dev, which I've just started experimenting with.
-                I code because it's fun 😄 and it's my go-to when I have free time!
-                <br><br>
-                See experience below!
-            </p>
+        <div class="about-grid-container">
+            <div class="a-grid-item"><img id="a-img" src="images/profile-pic.jpeg"></div>
+            <div class="a-grid-item">
+                <br><br><br> 
+                <h3>About Me</h3><br>
+                <p>Hi, I'm Taylor! I'm currently student at Menlo School in Atherton, CA. 
+                    I enjoy playing electric guitar, running cross country, 
+                    and rewatching the Simpsons (Lisa is my spirit animal). Some 
+                    of my favorite books include <i>The Glass Castle</i> by Jeanette Walls,   
+                    <i>Hitchhiker's Guide</i> to the Galaxy by Douglas Adams, and All the  
+                    <i>Light We Cannot See</i> by Anthony Doerr. One of my favorite hobbies is creative writing (I just joined LitMag!).
+                    I'm also an avid Star Wars fan :)
+                    <br><br>
+                    I started programming in third grade, and my first project was a Flappy Bird game. A favorite pasttime of mine is remaking 
+                    old Atari games; I've made are Dig Dug, Pac-man, and Space Invaders. Other topics I'm super
+                    interested are ML (especially with medical applications), image processing, game dev, and VR dev, which I've just started experimenting with.
+                    I code because it's fun 😄 and it's my go-to when I have free time!
+                    <br><br>
+                    See experience below!
+                </p>
+            </div>
         </div>
-    </div>
-  
-    <div  id="jump-loc" class="scroll-down">
-        <button type="button" onclick="goTo()"></button>
-    </div>
-    <div class="recent-education show-on-scroll">
-        <h3>📚 Education</h3>
-        <div class="ed-grid">
-            <div class="ed-grid-item">
-                <img src="images/menlo-logo.png">
+    
+        <div  href = "#about-experience" id="jump-loc" class="scroll-down">
+            <button type="button" onclick="goTo()"></button>
+        </div>
+        <div class="recent-education show-on-scroll">
+            <h3>📚 Education</h3>
+            <div class="ed-grid">
+                <div class="ed-grid-item">
+                    <img src="images/menlo-logo.png">
+                </div>
+                <div class="ed-grid-item">
+                    <p>Menlo School, Class of 2024 :)</p>
+                </div>
             </div>
-            <div class="ed-grid-item">
-                <p>Menlo School, Class of 2024 :)</p>
-            </div>
+            <br>
+            <h3>⏰ Recent</h3>
+            <a href="https://stanfordaimi.medium.com/radiology-and-resnets-our-summer-internship-experience-with-aimi-abda196494d7">Medium - Radiology and Resnets: Our Internship Experience With AIMI</a>
+            <h3>Languages</h3>
+            <ul>
+                <li><p>Java</p></li>
+                <li><p>Python</p></li>
+                <li><p>C#</p></li>
+                <li><p>JavaScript</p></li>
+                <li><p>Swift (beginning)</p></li>
+                <li><p>Solidity (beginning)</p></li>
+                <li><p>Personal goal to learn Moo 🐄</p></li>
+            </ul>
         </div>
         <br>
-        <h3>⏰ Recent</h3>
-        <a href="https://stanfordaimi.medium.com/radiology-and-resnets-our-summer-internship-experience-with-aimi-abda196494d7">Medium - Radiology and Resnets: Our Internship Experience With AIMI</a>
-        <h3>Languages</h3>
-        <ul>
-            <li><p>Java</p></li>
-            <li><p>Python</p></li>
-            <li><p>C#</p></li>
-            <li><p>JavaScript</p></li>
-            <li><p>Swift (beginning)</p></li>
-            <li><p>Solidity (beginning)</p></li>
-            <li><p>Personal goal to learn Moo 🐄</p></li>
-        </ul>
-    </div>
-    <br>
-    <div class="experience">
-        <h3 class="show-on-scroll">💻 Experience</h3>
-        <p class="show-on-scroll">
-            <span>Stanford AIMI Intern <i>(Jun 2022 - Current)</i></span><br>
-            I'm currently working on a project with Stanford AIMI on making education around machine
-            learning more digestable and accessible to highschool students. I've been working with 
-            a couple other interns on creating lesson plans on topics such as an introduction to 
-            neural networks, transfer learning, and YOLO. We've been creating a website with these lessons 
-            as well as exercises and applications.
-            <br><br>
-            Over the summer, I worked on developing a CNN which detected medical devices in chest x-rays with
-            97% accuracy and used YOLO to draw bounding boxes around them.
-        </p>
-        <p class="show-on-scroll">
-            <span>Melcher Lab (Stanford) Employee <i>(March 2022 - Current)</i></span><br>
-            There are two projects I've worked on with the Melcher lab. I wrote scripts to identify
-            whether microscope images were usable (working off blurriness and tissue area in an image). I've 
-            also been working on creating a GUI for a steatosis analyzer. 
-            <br><br>
-            Another project I've been working on is developing a suturing simulation on an Oculus. I've had a 
-            lot of fun learning how to use Unity and Blender!
-        </p>
-        <p class="show-on-scroll">
-            <span>FTC Robotics Lead Software Engineer <i>(August 2021 - Current</i>)</span><br>
-            I am the lead software engineer for the InZain bots, which participates in FIRST robotics 
-            competitions. I'm responsible for writing programs such as our heading follower 
-            (a kinematics optimization), autonomous driving, and object identification. We placed
-            5th in NorCal for the 2021-2022 season.
-        </p>
-        <p class="show-on-scroll">
-            <span>WINS (Women In STEM) Leadership Member <i>(June 2022 - Current)</i></span><br>
-            I am one of the founders of WINS, which is a club directed at encouraging women in STEM. One 
-            of our goals is increasing female participation in advanced STEM classes by providing
-            club support through resources, shared study guides for classes, and general encouragement. We
-            are also beginning a mentorship program, where we pair club members with female professionals
-            in their field of interest to provide opportunities for guidance and internships. 
-        </p>
-        <p class="show-on-scroll">
-            <span>Menlo Hacks Planning Team <i>(June 2022 - Current)</i></span><br>
-            I'm helping plan Menlo's Hackathon, which I participated in (2021). 
-        </p>
-        <p class="show-on-scroll">
-            <span>MakerDAO Summer Intern <i>(June 2022 - September 2022)</i></span><br>
-            I interned for MakerDAO over the summer. I wrote scripts which automatically
-            updated data on crypto KPIs and created a front-end to display them. I also 
-            learned about a bit about Solidity.  
-        </p>
-        <p class="show-on-scroll">
-            <span>MBEST (Women In STEM) Leadership Member <i>(August 2021 - June 2022)</i></span><br>
-            I was a member of Menlo School’s MBEST leadership team, a club which is aimed at encouraging 
-            women in STEM. My responsibilities are to help communicate with the student body, 
-            administration, and help plan STEM related workshops.
-        </p>
-    </div>
- 
-    <br>
-    <br>
-    <script>
-        const interval = 200; 
-        const minPos = -500; 
-        var lastScroll = 0; 
-        var triggered = false;
-        var elementsToShow = document.querySelectorAll('.show-on-scroll');
-        elementsToShow = Array.from(elementsToShow); 
-        var scroll = window.requestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60)};
-        
-        window.addEventListener('scroll', () => {
-            var test = document.documentElement.getBoundingClientRect().top; 
-            if(test < minPos){
-                if(!triggered){
-                    show(elementsToShow); 
+        <div class="experience">
+            <h3 class="show-on-scroll">💻 Experience</h3>
+            <p class="show-on-scroll">
+                <span>Stanford AIMI Intern <i>(Jun 2022 - Current)</i></span><br>
+                I'm currently working on a project with Stanford AIMI on making education around machine
+                learning more digestable and accessible to highschool students. I've been working with 
+                a couple other interns on creating lesson plans on topics such as an introduction to 
+                neural networks, transfer learning, and YOLO. We've been creating a website with these lessons 
+                as well as exercises and applications.
+                <br><br>
+                Over the summer, I worked on developing a CNN which detected medical devices in chest x-rays with
+                97% accuracy and used YOLO to draw bounding boxes around them.
+            </p>
+            <p class="show-on-scroll">
+                <span>Melcher Lab (Stanford) Employee <i>(March 2022 - Current)</i></span><br>
+                There are two projects I've worked on with the Melcher lab. I wrote scripts to identify
+                whether microscope images were usable (working off blurriness and tissue area in an image). I've 
+                also been working on creating a GUI for a steatosis analyzer. 
+                <br><br>
+                Another project I've been working on is developing a suturing simulation on an Oculus. I've had a 
+                lot of fun learning how to use Unity and Blender!
+            </p>
+            <p class="show-on-scroll">
+                <span>FTC Robotics Lead Software Engineer <i>(August 2021 - Current</i>)</span><br>
+                I am the lead software engineer for the InZain bots, which participates in FIRST robotics 
+                competitions. I'm responsible for writing programs such as our heading follower 
+                (a kinematics optimization), autonomous driving, and object identification. We placed
+                5th in NorCal for the 2021-2022 season.
+            </p>
+            <p class="show-on-scroll">
+                <span>WINS (Women In STEM) Leadership Member <i>(June 2022 - Current)</i></span><br>
+                I am one of the founders of WINS, which is a club directed at encouraging women in STEM. One 
+                of our goals is increasing female participation in advanced STEM classes by providing
+                club support through resources, shared study guides for classes, and general encouragement. We
+                are also beginning a mentorship program, where we pair club members with female professionals
+                in their field of interest to provide opportunities for guidance and internships. 
+            </p>
+            <p class="show-on-scroll">
+                <span>Menlo Hacks Planning Team <i>(June 2022 - Current)</i></span><br>
+                I'm helping plan Menlo's Hackathon, which I participated in (2021). 
+            </p>
+            <p class="show-on-scroll">
+                <span>MakerDAO Summer Intern <i>(June 2022 - September 2022)</i></span><br>
+                I interned for MakerDAO over the summer. I wrote scripts which automatically
+                updated data on crypto KPIs and created a front-end to display them. I also 
+                learned about a bit about Solidity.  
+            </p>
+            <p class="show-on-scroll">
+                <span>MBEST (Women In STEM) Leadership Member <i>(August 2021 - June 2022)</i></span><br>
+                I was a member of Menlo School’s MBEST leadership team, a club which is aimed at encouraging 
+                women in STEM. My responsibilities are to help communicate with the student body, 
+                administration, and help plan STEM related workshops.
+            </p>
+        </div>
+    
+        <br>
+        <br>
+        <script>
+            const interval = 200; 
+            const minPos = -500; 
+            var lastScroll = 0; 
+            var triggered = false;
+            var elementsToShow = document.querySelectorAll('.show-on-scroll');
+            elementsToShow = Array.from(elementsToShow); 
+            var scroll = window.requestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60)};
+            
+            window.addEventListener('scroll', () => {
+                var test = document.documentElement.getBoundingClientRect().top; 
+                if(test < minPos){
+                    if(!triggered){
+                        show(elementsToShow); 
+                    }
                 }
+                lastScroll = test; 
+            })
+
+            function show(arr) {
+                if (arr.length === 0) {
+                    return;
+                }
+                arr[0].style.opacity = 1; 
+
+                setTimeout(() => {
+                    show(arr.slice(1));
+                }, interval);  
             }
-            lastScroll = test; 
-        })
 
-        function show(arr) {
-            if (arr.length === 0) {
-                return;
+            function goTo(){
+                document.getElementById("jump-loc").scrollIntoView({behavior: 'smooth'});
             }
-            arr[0].style.opacity = 1; 
-
-            setTimeout(() => {
-                show(arr.slice(1));
-            }, interval);  
-        }
-
-        function goTo(){
-            document.getElementById("jump-loc").scrollIntoView({behavior: 'smooth'});
-        }
-    </script>
+        </script>
+    </div>
+     <!-- Your Content ABOVE this Line -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

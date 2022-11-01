@@ -1,83 +1,108 @@
 <!DOCTYPE html>
-<!--TODO: add bootstrap code-->
 <!--Hero page-->
 <html>
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href = "genstyle.css" rel="stylesheet" type="text/css">
     <link href = "style.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="images/logo-main.png">
     <title>Home</title>
 </head>
 <body>
-    <!--Nav bar-->
-    <nav>
-        <img src="images/logo-main.png">
-        <a id="on-page" href="index.html">Home</a>
-        <a href="about-me.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="hero-main">
-        <div class="hero-grid-comp">
-            <img src="images/main-img.jpg">
-        </div>
-        <div class="hero-grid-comp">
-            <p>
-                <span>Hi! I'm <span id="nav-header">T</span></span>
-                <br><br>
-                Highschool student @ Menlo School | Software developer
-                <ul>
-                    <li>⭐️ Machine Learning</li>
-                    <li>⭐️ VR Development</li>
-                    <li>⭐️ Image Processing</li>
+    <div class="container-fluid">
+        <!--Nav bar-->
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="index.html"><img src="images/logo-main.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about-me.html">About me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="contact.html">Contact</a>
+                </li>
                 </ul>
-            </p>
-        </div>
-    </div>
-    <h1>More about me!</h1>
-    <p style="margin-left: 10vw;"><i>Some of my hobbies</i></p>
-    <div class="more-about-me">
-        <div class="more-about-comp">
-            <img src="images/physics.jpg">
-            <p>Physics! ⚛️</p>
-        </div>
-        <div class="more-about-comp">
-            <img src="images/robotics.jpg">
-            <p>Robotics 🤖</p>
-        </div>
-        <div class="more-about-comp">
-            <img src="images/friends.jpg">
-            <p>Hanging out with friends 🤗</p>
-        </div>
-        <div class="more-about-comp">
-            <img src="images/soccer.jpg">
-            <p>Soccer ️⚽️</p>
-        </div>
-        <div class="more-about-comp">
-            <img src="images/xc.jpg">
-            <p>Cross Country 👟</p>
-        </div>
-        <div class="more-about-comp">
-            <img src="images/guitar.jpg">
-            <p>Electric Guitar 🎸</p>
-        </div>
-    </div>
+            </div>
+        </nav>
 
-    <!--Fun animation :)-->
-    <script>
-        var nameElement = document.getElementById("nav-header"); 
-        var nameCounter = 0;
-        let nameTimer = setInterval(nameFunc, 300);
-        let nameStr = "aylor Tam"; 
-        
-        function nameFunc() {
-            var currStr = nameElement.innerHTML; 
-            var add = nameStr.charAt(nameCounter); 
-            nameElement.innerHTML = currStr + add; 
-            nameCounter += 1;
-            if(nameCounter > nameStr.length){
-                clearInterval(nameTimer); 
+        <div class="hero-main">
+            <div class="hero-grid-comp">
+                <img src="images/main-img.jpg">
+            </div>
+            <div class="hero-grid-comp">
+                <p>
+                    <span>Hi! I'm <span id="nav-header">T</span></span>
+                    <br><br>
+                    Highschool student @ Menlo School | Software developer
+                    <ul>
+                        <li>⭐️ Machine Learning</li>
+                        <li>⭐️ VR Development</li>
+                        <li>⭐️ Image Processing</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <h1>More about me!</h1>
+        <p style="margin-left: 10vw;"><i>Some of my hobbies</i></p>
+        <div class="more-about-me">
+            <div class="more-about-comp">
+                <img src="images/physics.jpg">
+                <p>Physics! ⚛️</p>
+            </div>
+            <div class="more-about-comp">
+                <img src="images/robotics.jpg">
+                <p>Robotics 🤖</p>
+            </div>
+            <div class="more-about-comp">
+                <img src="images/friends.jpg">
+                <p>Hanging out with friends 🤗</p>
+            </div>
+            <div class="more-about-comp">
+                <img src="images/soccer.jpg">
+                <p>Soccer ️⚽️</p>
+            </div>
+            <div class="more-about-comp">
+                <img src="images/xc.jpg">
+                <p>Cross Country 👟</p>
+            </div>
+            <div class="more-about-comp">
+                <img src="images/guitar.jpg">
+                <p>Electric Guitar 🎸</p>
+            </div>
+        </div>
+
+        <!--Fun animation :)-->
+        <script>
+            var nameElement = document.getElementById("nav-header"); 
+            var nameCounter = 0;
+            let nameTimer = setInterval(nameFunc, 300);
+            let nameStr = "aylor Tam"; 
+            
+            function nameFunc() {
+                var currStr = nameElement.innerHTML; 
+                var add = nameStr.charAt(nameCounter); 
+                nameElement.innerHTML = currStr + add; 
+                nameCounter += 1;
+                if(nameCounter > nameStr.length){
+                    clearInterval(nameTimer); 
+                }
             }
-        }
-    </script>
+        </script>
+    </div>
+     <!-- Your Content ABOVE this Line -->
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
