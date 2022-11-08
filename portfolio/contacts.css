@@ -1,1 +1,16 @@
-/* should go into gen style below */ 
+.card-group{
+    margin-top: 5vh;
+    margin-right: 5vw;
+    margin-left: 5vw;
+}
+
+.card{
+    margin-right: 5vw;
+    margin-left: 5vw;
+    border: none;
+}
+
+.card-body{
+    display: block;
+    text-align: center;
+}

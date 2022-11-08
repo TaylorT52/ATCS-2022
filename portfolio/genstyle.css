@@ -10,6 +10,7 @@ nav img{
 
 nav {
     background-color: #F987C5; 
+    z-index: 1;
 }
 
 .nav-link {
@@ -22,4 +23,22 @@ nav {
 
 .active{
     text-decoration: underline; 
+}
+
+.container-fluid{
+    padding: 0px; 
+}
+
+.title{
+    display:block;
+    text-align: center;
+}
+
+.section-title{
+    display: inline-block;
+    color:white;
+    background-color:#F987C5; 
+    padding-right:4px;
+    padding-left:4px;
+    margin-top:5vh;
 }

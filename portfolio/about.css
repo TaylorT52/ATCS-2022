@@ -1,49 +1,15 @@
 /*******************************ABOUT PAGE*******************************/
-/*first grid*/
-.about-grid-container{
-    display: inline-grid; 
-    margin-top: 20vh;
-    padding-right: 15vw; 
-    padding-left: 15vw;  
-    width: 70vw; 
-    grid-template-columns: 2fr 3fr; 
-    grid-template-rows: repeat(2, 14vh);
-    column-gap: 5vw;
-    row-gap: 20vh; 
+/*jumbotron*/
+.jumbotron{
+    height:90vh;
+    background-position-x: 10vw;
+    background-image: url(images/background.jpg); 
+    background-size:cover;
 }
 
-.a-grid-item{
-    margin: auto;
-    font-size: 18px; 
-}
-
-/* Education grid */ 
-.recent-education{
-    margin-top: 40vh; 
-    margin-right:20vw; 
-    margin-left: 20vw; 
-}
-
-.ed-grid{
-    display: inline-grid; 
-    grid-template-columns: 1fr 5fr; 
-    column-gap: 2vw;
-}
-
-.ed-grid p{
-    margin-top: 3vh; 
-}
-
-.ed-grid img{
-    height: 10vh; 
-    width: 5vw; 
-}
-
-.recent-education a{
-    display: block; 
-    color:black;
-    padding: 15px; 
-    background-color: ghostwhite;
+.jumbotron .container{
+    margin-left:5vw;
+    margin-top:25vh;
 }
 
 /* Experience section */
@@ -150,15 +116,16 @@ ul{
 /*Scrolling animation*/
 .scroll-down {
     background-color: black;
-    height: 50px;
-    width: 30px;
+    height: 5vh;
+    width: 1.5vw;
     border: 2px solid black;
     position: absolute;
-    left: 50%;
-    bottom: 20px;
+    left: 6%;
+    bottom: 43vh;
     border-radius: 50px;
     cursor: pointer;
   }
+
   .scroll-down::before,
   .scroll-down::after {
     content: "";
@@ -201,6 +168,54 @@ ul{
       opacity: 0;
     }
   }
+
+/**********UPDATE ABOVE8***********/
+
+/*first grid*/
+.about-grid-container{
+    display: inline-grid; 
+    width: 75vw; 
+    grid-template-columns: 2fr 3fr; 
+    grid-template-rows: repeat(2, 14vh);
+    column-gap: 5vw;
+    row-gap: 20vh; 
+}
+
+.a-grid-item{
+    margin: auto;
+    font-size: 18px; 
+}
+
+/* Education grid */ 
+.recent-education{
+    margin-top: 40vh; 
+    margin-right:20vw; 
+    margin-left: 20vw; 
+}
+
+.ed-grid{
+    display: inline-grid; 
+    grid-template-columns: 1fr 5fr; 
+    column-gap: 2vw;
+    margin-top: 50px; 
+}
+
+.ed-grid p{
+    margin-top: 3vh; 
+}
+
+.ed-grid img{
+    height: 10vh; 
+    width: 5vw; 
+}
+
+.recent-education a{
+    display: block; 
+    color:black;
+    padding: 15px; 
+    background-color: ghostwhite;
+}
+
 
 /*images*/
 #a-img{

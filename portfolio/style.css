@@ -41,6 +41,14 @@ h1{
     color: white; 
 }
 
+/*Carousel*/
+.carousel-inner{
+    margin: auto;
+    width: 30vw;
+    margin-bottom: 500px;
+}
+
+
 /*More about me section*/ 
 .more-about-me{
     display: inline-grid; 

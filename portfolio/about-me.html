@@ -17,7 +17,7 @@
 <body>
     <!--Nav bar-->
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar sticky-top navbar-expand-lg">
             <a class="navbar-brand" href="index.html"><img src="images/logo-main.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,29 +36,48 @@
                 </ul>
             </div>
         </nav>
-        <div class="about-grid-container">
-            <div class="a-grid-item"><img id="a-img" src="images/profile-pic.jpeg"></div>
-            <div class="a-grid-item">
-                <br><br><br> 
-                <h3>About Me</h3><br>
-                <p>Hi, I'm Taylor! I'm currently student at Menlo School in Atherton, CA. 
-                    I enjoy playing electric guitar, running cross country, 
-                    and rewatching the Simpsons (Lisa is my spirit animal). Some 
-                    of my favorite books include <i>The Glass Castle</i> by Jeanette Walls,   
-                    <i>Hitchhiker's Guide</i> to the Galaxy by Douglas Adams, and All the  
-                    <i>Light We Cannot See</i> by Anthony Doerr. One of my favorite hobbies is creative writing (I just joined LitMag!).
-                    I'm also an avid Star Wars fan :)
-                    <br><br>
-                    I started programming in third grade, and my first project was a Flappy Bird game. A favorite pasttime of mine is remaking 
-                    old Atari games; I've made are Dig Dug, Pac-man, and Space Invaders. Other topics I'm super
-                    interested are ML (especially with medical applications), image processing, game dev, and VR dev, which I've just started experimenting with.
-                    I code because it's fun 😄 and it's my go-to when I have free time!
-                    <br><br>
-                    See experience below!
-                </p>
+
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">About me</h1>
+                <p class="lead">Education  |   Recent   |   Skills   |   Experience</p>
+                <div href="#about-experience" id="jump-loc" class="scroll-down">
+                    <button type="button" onclick="goTo()"></button>
+                </div>
             </div>
         </div>
-    
+
+        <div class="about-p">
+
+        </div>
+
+        <!--
+        <div class="row justify-content-center">
+            <div class="about-grid-container">
+                <div class="a-grid-item"><img id="a-img" src="images/profile-pic.jpeg"></div>
+                <div class="a-grid-item">
+                    <br><br><br> 
+                    <h3>About Me</h3><br>
+                    <p>Hi, I'm Taylor! I'm currently student at Menlo School in Atherton, CA. 
+                        I enjoy playing electric guitar, running cross country, 
+                        and rewatching the Simpsons (Lisa is my spirit animal). Some 
+                        of my favorite books include <i>The Glass Castle</i> by Jeanette Walls,   
+                        <i>Hitchhiker's Guide</i> to the Galaxy by Douglas Adams, and All the  
+                        <i>Light We Cannot See</i> by Anthony Doerr. One of my favorite hobbies is creative writing (I just joined LitMag!).
+                        I'm also an avid Star Wars fan :)
+                        <br><br>
+                        I started programming in third grade, and my first project was a Flappy Bird game. A favorite pasttime of mine is remaking 
+                        old Atari games; I've made are Dig Dug, Pac-man, and Space Invaders. Other topics I'm super
+                        interested are ML (especially with medical applications), image processing, game dev, and VR dev, which I've just started experimenting with.
+                        I code because it's fun 😄 and it's my go-to when I have free time!
+                        <br><br>
+                        See experience below!
+                    </p>
+                </div>
+            </div>
+        </div>
+            
+     
         <div  href = "#about-experience" id="jump-loc" class="scroll-down">
             <button type="button" onclick="goTo()"></button>
         </div>
@@ -143,7 +162,7 @@
         </div>
     
         <br>
-        <br>
+        <br>-->
         <script>
             const interval = 200; 
             const minPos = -500; 
@@ -175,9 +194,10 @@
             }
 
             function goTo(){
+
                 document.getElementById("jump-loc").scrollIntoView({behavior: 'smooth'});
             }
-        </script>
+        </script> 
     </div>
      <!-- Your Content ABOVE this Line -->
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
