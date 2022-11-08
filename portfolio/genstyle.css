@@ -1,3 +1,4 @@
+/*******************************Style across all pages*******************************/
 html {
     scroll-behavior: smooth;
 }
@@ -25,20 +26,23 @@ nav {
     text-decoration: underline; 
 }
 
+/*Containers*/
 .container-fluid{
     padding: 0px; 
 }
 
+/*Titles, text etc.*/
 .title{
     display:block;
     text-align: center;
 }
 
-.section-title{
-    display: inline-block;
-    color:white;
-    background-color:#F987C5; 
-    padding-right:4px;
-    padding-left:4px;
-    margin-top:5vh;
+/*footer*/
+footer{
+    padding-top:1vh;
+}
+
+footer .line{
+    margin-left: -22vw;
+    width: 102vw;
 }

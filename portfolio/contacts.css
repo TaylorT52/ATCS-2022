@@ -14,3 +14,16 @@
     display: block;
     text-align: center;
 }
+
+h2{
+    margin-top:5vh;
+}
+
+hr{
+    margin: auto;
+    width: 20vw;
+    border:none;
+    background-color:#F987C5;
+    height:5px;
+    margin-bottom: 10vh;
+}

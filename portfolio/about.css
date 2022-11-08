@@ -12,6 +12,16 @@
     margin-top:25vh;
 }
 
+a {
+    color:black;
+    text-decoration: none;
+}
+
+a:hover{
+    color:black;
+    text-decoration: underline;
+}
+
 /* Experience section */
 .show-on-scroll ~ p span{
     padding-right: 2px;
@@ -31,7 +41,8 @@ ul{
 
 .experience{
     margin-right: 20vw; 
-    margin-left: 20vw; 
+    margin-left: 10vw; 
+    margin-bottom: 20vh;
 }
 
 .experience p{
@@ -46,12 +57,12 @@ ul{
     content: counter(section);
     position: absolute;
     right: 100%; 
-    margin-right: -20px;
+    margin-right: -25px;
     /*circle*/
     border-radius: 50%;
     padding: 10px;
-    height: 20px;
-    width: 20px;
+    height: 42px;
+    width: 42px;
     /*counter #*/
     background-color: #F987C5;
     text-align:center;
@@ -61,13 +72,13 @@ ul{
 .experience p:nth-child(odd):before {
     content: counter(section);
     left: 100%; 
-    margin-left: -20px;
+    margin-left: -25px;
     position: absolute;
     /*circle*/
     border-radius: 50%;
     padding: 10px;
-    height: 20px;
-    width: 20px;
+    height: 42px;
+    width: 42px;
     /*counter #*/
     background-color: #F987C5;
     text-align:center;
@@ -169,69 +180,67 @@ ul{
     }
   }
 
-/**********UPDATE ABOVE8***********/
-
-/*first grid*/
-.about-grid-container{
-    display: inline-grid; 
-    width: 75vw; 
-    grid-template-columns: 2fr 3fr; 
-    grid-template-rows: repeat(2, 14vh);
-    column-gap: 5vw;
-    row-gap: 20vh; 
-}
-
-.a-grid-item{
+/**About cols**/
+.about-p > .row{
     margin: auto;
-    font-size: 18px; 
+    width:90vw;
+    margin-bottom:20vh;
 }
 
-/* Education grid */ 
-.recent-education{
-    margin-top: 40vh; 
-    margin-right:20vw; 
-    margin-left: 20vw; 
+.about-p .col{
+    margin-right:3vw;
+    margin-left:3vw;
 }
 
-.ed-grid{
-    display: inline-grid; 
-    grid-template-columns: 1fr 5fr; 
-    column-gap: 2vw;
-    margin-top: 50px; 
-}
-
-.ed-grid p{
-    margin-top: 3vh; 
-}
-
-.ed-grid img{
-    height: 10vh; 
-    width: 5vw; 
-}
-
-.recent-education a{
-    display: block; 
-    color:black;
-    padding: 15px; 
-    background-color: ghostwhite;
-}
-
-
-/*images*/
-#a-img{
-    margin: auto; 
-    margin-top: 10vh;
-    display: block;
+.about-img{
     width:20vw;
-    height:auto;
-    border-radius: 50%;
-    border: solid #F987C5 2px; 
+    height:20vw;
+    margin:auto;
+    margin-top:3vh;
 }
 
-#menlo-logo{
-    margin: auto; 
-    display: block; 
-    width: 5vw; 
-    height: 10vh; 
-    border-radius: 50%
+.about-img > img{
+    max-width:100%;
+    max-height:100%;
+    border-radius: 50%;
+}
+
+.col > hr {
+    border:none;
+    background-color:#F987C5;
+    height:5px;
+    margin-left:0px;
+    width: 50%;
+}
+
+.row > img{
+    margin-top:3vh;
+    height:12vh;
+    width:12vh;
+}
+
+.row > p{
+    margin-top:7vh;
+    margin-left:2vw;
+}
+
+.row > a{
+    display:block;
+    background-color: #F5F5F5;
+    margin-top:2vh;
+    color:black;
+    margin-left:1vw;
+    padding-right:10vw;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:15px;
+}
+
+ul i {
+    margin-left:-1.5vw;
+}
+
+.card-deck{
+    margin-top:5vh;
+    margin-left:0.2vw;
 }

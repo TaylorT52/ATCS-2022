@@ -36,55 +36,33 @@
             </div>
         </nav>
 
-        <div class="hero-main">
-            <div class="hero-grid-comp">
-                <img src="images/main-img.jpg">
-            </div>
-            <div class="hero-grid-comp">
-                <p>
-                    <span>Hi! I'm <span id="nav-header">T</span></span>
-                    <br><br>
-                    Highschool student @ Menlo School | Software developer
-                    <ul>
-                        <li>⭐️ Machine Learning</li>
-                        <li>⭐️ VR Development</li>
-                        <li>⭐️ Image Processing</li>
-                    </ul>
-                </p>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                    <div class="keep-circular"><img src="images/main-img.jpg"></div>
+                    </div>
+                    <div class="col">
+                    <div class="hero-grid-comp">
+                        <p>
+                            <span>Hi! I'm <span id="nav-header">T</span></span>
+                            <br><br>
+                            Highschool student @ Menlo School | Software developer
+                            <ul>
+                                <li>⭐️ Machine Learning</li>
+                                <li>⭐️ VR Development</li>
+                                <li>⭐️ Image Processing</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
-        <h1>More about me!</h1>
+
+        <hr class="divider">
+        <h2>More about me!</h2>
         <p style="margin-left: 10vw;"><i>Some of my hobbies</i></p>
-
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block" src="images/physics.jpg" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block" src="images/robotics.jpg" alt="Second slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block" src="images/friends.jpg" alt="Third slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block" src="images/soccer.jpg" alt="Fourth slide">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block" src="images/guitar.jpg" alt="Fifth slide">
-              </div>
-            </div>
-        </div>
-          
-
+        
 
 
         <!------>
@@ -116,25 +94,37 @@
         </div>
          -->
  
-        <!--Fun animation :)-->
-        <script>
-            var nameElement = document.getElementById("nav-header"); 
-            var nameCounter = 0;
-            let nameTimer = setInterval(nameFunc, 300);
-            let nameStr = "aylor Tam"; 
-            
-            function nameFunc() {
-                var currStr = nameElement.innerHTML; 
-                var add = nameStr.charAt(nameCounter); 
-                nameElement.innerHTML = currStr + add; 
-                nameCounter += 1;
-                if(nameCounter > nameStr.length){
-                    clearInterval(nameTimer); 
-                }
-            }
-        </script>
+    
+        </div>
+        <!-- Footer -->
+        <footer class="text-center text-lg-start bg-light text-muted">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Taylor Tam</h6>
+                    <p>Software developer & Higschool student at Menlo</p>
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+                    <p><a href="about-me.html" class="text-reset">About Page</a></p>
+                    <p><a href="contact.html" class="text-reset">More contact info</a></p>
+                </div>
+        
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p>Palo Alto, California, United States</p>
+                    <p>taylor@taylortam.com</p>
+                </div>
+            </div>
+
+            <div class="line text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            </div>
+        </footer>
     </div>
      <!-- Your Content ABOVE this Line -->
+     <script src="scripts/index.js"></script>
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -40,24 +40,19 @@
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">About me</h1>
-                <p class="lead">Education  |   Recent   |   Skills   |   Experience</p>
+                <p class="lead">  <a href="#loc-2">Skills & Languages</a> | <a href="#loc-3">Education</a>  |   <a href="#loc-4">Recent & Personal Projects</a>   | <a href="#loc-5">Experience</a></p>
                 <div href="#about-experience" id="jump-loc" class="scroll-down">
-                    <button type="button" onclick="goTo()"></button>
+                    <button type="button" onclick="goTo(1)"></button>
                 </div>
             </div>
         </div>
 
+        <div id="loc-1"></div>
         <div class="about-p">
-
-        </div>
-
-        <!--
-        <div class="row justify-content-center">
-            <div class="about-grid-container">
-                <div class="a-grid-item"><img id="a-img" src="images/profile-pic.jpeg"></div>
-                <div class="a-grid-item">
-                    <br><br><br> 
-                    <h3>About Me</h3><br>
+            <div class="row">
+                <div class="col">
+                    <hr>
+                    <h2>👋 Hi!</h2>
                     <p>Hi, I'm Taylor! I'm currently student at Menlo School in Atherton, CA. 
                         I enjoy playing electric guitar, running cross country, 
                         and rewatching the Simpsons (Lisa is my spirit animal). Some 
@@ -70,42 +65,134 @@
                         old Atari games; I've made are Dig Dug, Pac-man, and Space Invaders. Other topics I'm super
                         interested are ML (especially with medical applications), image processing, game dev, and VR dev, which I've just started experimenting with.
                         I code because it's fun 😄 and it's my go-to when I have free time!
-                        <br><br>
-                        See experience below!
                     </p>
                 </div>
-            </div>
-        </div>
-            
-     
-        <div  href = "#about-experience" id="jump-loc" class="scroll-down">
-            <button type="button" onclick="goTo()"></button>
-        </div>
-        <div class="recent-education show-on-scroll">
-            <h3>📚 Education</h3>
-            <div class="ed-grid">
-                <div class="ed-grid-item">
-                    <img src="images/menlo-logo.png">
-                </div>
-                <div class="ed-grid-item">
-                    <p>Menlo School, Class of 2024 :)</p>
+                <div class="col">
+                    <div class="about-img"><img class="img-fluid" src="images/profile-pic.jpeg"></div>
+                    <div id="loc-2"></div>
                 </div>
             </div>
-            <br>
-            <h3>⏰ Recent</h3>
-            <a href="https://stanfordaimi.medium.com/radiology-and-resnets-our-summer-internship-experience-with-aimi-abda196494d7">Medium - Radiology and Resnets: Our Internship Experience With AIMI</a>
-            <h3>Languages</h3>
-            <ul>
-                <li><p>Java</p></li>
-                <li><p>Python</p></li>
-                <li><p>C#</p></li>
-                <li><p>JavaScript</p></li>
-                <li><p>Swift (beginning)</p></li>
-                <li><p>Solidity (beginning)</p></li>
-                <li><p>Personal goal to learn Moo 🐄</p></li>
-            </ul>
         </div>
-        <br>
+
+
+        <div class="about-p">
+            <div class="row">
+                <div class="col">
+                    <hr>
+                    <h2>☎️ Languages & Skills</h2>
+                    <ul>
+                        <br>
+                        <p><i>Programming</i></p>
+                        <li><p>Java</p></li>
+                        <li><p>Python</p></li>
+                        <li><p>C#</p></li>
+                        <li><p>JavaScript</p></li>
+                        <li><p>Swift (beginning)</p></li>
+                        <li><p>Solidity (beginning)</p></li>
+                        <li><p>Personal goal to learn Moo 🐄</p></li>
+                        <br>
+                        <p><i>Languages</i></p>
+                        <li><p>English</p></li>
+                        <li><p>Spanish (fluent)</p></li>
+                        <br>
+                        <p><i>Skills</i></p>
+                        <li><p>PyTorch</p></li>
+                        <li><p>OpenCV</p></li>
+                        <li><p>Sci-kit, pandas, and numpy</p></li>
+                        <li><p>C++ with Unity for Oculus</p></li>
+                        <div id="loc-3"></div>
+                    </ul>
+                </div>
+                <div class="col">
+                    
+                </div>
+              </div>
+        </div>
+
+        <div class="about-p">
+            <div class="row">
+                <div class="col">
+                    <hr>
+                    <h2>📚 Education</h2>
+                    <div class="row">
+                        <img src="images/menlo-logo.png">
+                        <p>Menlo School, Class of 2024 :)</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div id="loc-4"></div>
+        <div class="about-p">
+            <div class="row">
+                <div class="col">
+                    <hr>
+                    <h2>⏰ Recent & Fun Personal Projects</h2>
+                    <p>Nothing serious, but just a few fun projects I've worked on over the years :)</p>
+                    <div class="row">
+                        <a href="https://stanfordaimi.medium.com/radiology-and-resnets-our-summer-internship-experience-with-aimi-abda196494d7">Medium - Radiology and Resnets: Our Internship Experience With AIMI</a>
+                    </div>
+                    <div class="row">
+                        <div class="card-deck">
+                            <div class="card">
+                              <img class="card-img-top" src="images/pacman.png" alt="Card image cap">
+                              <div class="card-body">
+                                <h5 class="card-title">Pac Man</h5>
+                                <p class="card-text">Pacman recreation in Java (for APCSA final project)! Random maze generation using DFS, custom pacman finding for each ghost, animations, cool graphics, and sound effects. Super fun project!</p>
+                              </div>
+                              <div class="card-footer">
+                                <small class="text-muted">2020</small>
+                              </div>
+                            </div>
+                            <div class="card">
+                              <img class="card-img-top" src="images/battleship.png" alt="Card image cap">
+                              <div class="card-body">
+                                <h5 class="card-title">Battleship</h5>
+                                <p class="card-text">Like the board game "Battleship" but make it Java with sound effects! This was my first time experimenting with adding sound to Java games, randomly placing ships, and making my own packages for organization.</p>
+                              </div>
+                              <div class="card-footer">
+                                <small class="text-muted">2020</small>
+                              </div>
+                            </div>
+                            <div class="card">
+                              <img class="card-img-top" src="images/digdug.png" alt="Card image cap">
+                              <div class="card-body">
+                                <h5 class="card-title">Dig Dug</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                              </div>
+                              <div class="card-footer">
+                                <small class="text-muted">2021</small>
+                              </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="images/flappybird.jpeg" alt="Card image cap">
+                                <div class="card-body">
+                                  <h5 class="card-title">Flappy Bird</h5>
+                                  <p class="card-text">My first JS project! Just a very simple version of flappy bird, used similar graphics to the actual game, but sentimental :)</p>
+                                </div>
+                                <div class="card-footer">
+                                  <small class="text-muted">2015</small>
+                                </div>
+                              </div>
+                              <div class="card">
+                                <img class="card-img-top" src="images/tissue-area.png" alt="Card image cap">
+                                <div class="card-body">
+                                  <h5 class="card-title">Image Contouring</h5>
+                                  <p class="card-text">Cool project to test morphological operators, blurring and sharpening kernels, and thresholding (Gaussian adaptive thresholding).</p>
+                                </div>
+                                <div class="card-footer">
+                                  <small class="text-muted">2022</small>
+                                </div>
+                              </div>
+                          </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div id="loc-5"></div>
         <div class="experience">
             <h3 class="show-on-scroll">💻 Experience</h3>
             <p class="show-on-scroll">
@@ -160,46 +247,34 @@
                 administration, and help plan STEM related workshops.
             </p>
         </div>
-    
-        <br>
-        <br>-->
-        <script>
-            const interval = 200; 
-            const minPos = -500; 
-            var lastScroll = 0; 
-            var triggered = false;
-            var elementsToShow = document.querySelectorAll('.show-on-scroll');
-            elementsToShow = Array.from(elementsToShow); 
-            var scroll = window.requestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60)};
-            
-            window.addEventListener('scroll', () => {
-                var test = document.documentElement.getBoundingClientRect().top; 
-                if(test < minPos){
-                    if(!triggered){
-                        show(elementsToShow); 
-                    }
-                }
-                lastScroll = test; 
-            })
+        <footer class="text-center text-lg-start bg-light text-muted">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Taylor Tam</h6>
+                    <p>Software developer & Higschool student at Menlo</p>
+                </div>
 
-            function show(arr) {
-                if (arr.length === 0) {
-                    return;
-                }
-                arr[0].style.opacity = 1; 
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+                    <p><a href="about-me.html" class="text-reset">About Page</a></p>
+                    <p><a href="contact.html" class="text-reset">More contact info</a></p>
+                </div>
+        
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p>Palo Alto, California, United States</p>
+                    <p>taylor@taylortam.com</p>
+                </div>
+            </div>
 
-                setTimeout(() => {
-                    show(arr.slice(1));
-                }, interval);  
-            }
-
-            function goTo(){
-
-                document.getElementById("jump-loc").scrollIntoView({behavior: 'smooth'});
-            }
-        </script> 
+            <div class="line text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            </div>
+        </footer>
     </div>
      <!-- Your Content ABOVE this Line -->
+     <script src="scripts/about.js"></script> 
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
