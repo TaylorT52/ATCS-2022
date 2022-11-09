@@ -1,4 +1,25 @@
 /*******************************ABOUT PAGE*******************************/
+/*slide in*/
+@keyframes fade-left {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+
+.not-visible{
+    visibility:hidden;
+}
+
+.active.fade-left{
+    text-decoration: none;
+    animation: fade-left 1.2s ease-in-out; 
+}
+
 /*jumbotron*/
 .jumbotron{
     height:90vh;
@@ -132,7 +153,7 @@ ul{
     border: 2px solid black;
     position: absolute;
     left: 6%;
-    bottom: 43vh;
+    bottom: 38vh;
     border-radius: 50px;
     cursor: pointer;
   }
