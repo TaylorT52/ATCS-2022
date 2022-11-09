@@ -12,13 +12,16 @@ h1{
     border:none;
     background-color:#F987C5;
     height:5px;
-    margin-top:40vh;
-    margin-left:10vw;
+    margin-left: 25vw;
     width: 50%;
 }
 
+.end-j{
+    margin-bottom: 40vh;
+}
+
 hr ~ h2{
-    margin-left:10vw;
+    text-align: center;
 }
 
 /*Jumbotron*/
@@ -35,6 +38,26 @@ hr ~ h2{
     max-width: 100%;
     max-height: 100%;
     border-radius: 50%;
+}
+
+/*carousel & columns*/
+.carousel{
+    margin-left:31vw;
+    margin-top: 5vh;
+    width:38vw;
+}
+.carousel-item img{
+    object-fit: cover;
+    object-position:center;
+    height: 50vh;
+    overflow:hidden;
+}
+
+/*Projects*/
+.projects{
+    width: 80vw;
+    margin-left:10vw;
+    margin-top:5vh;
 }
 
 /*Main hero grid*/
@@ -70,31 +93,4 @@ hr ~ h2{
     padding: 2px; 
     background-color:#F987C5; 
     color: white; 
-}
-
-.carousel{
-    margin-left: 10vw;
-}
-
-/*More about me section*/ 
-.more-about-me{
-    display: inline-grid; 
-    grid-template-columns: repeat(3, 4fr); 
-    grid-template-rows: repeat(2, 50%);
-    width: 80vw;  
-    height: 80vh; 
-    margin: 10vw; 
-    margin-top: 5vh;
-}
-
-.more-about-comp img{
-    height: 30vh; 
-    width: auto;  
-}
-
-.more-about-comp{
-    display: block; 
-    justify-content: center;
-    margin: auto; 
-    text-align: center;
 }
