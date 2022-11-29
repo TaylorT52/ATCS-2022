@@ -1,0 +1,29 @@
+.card-group{
+    margin-top: 5vh;
+    margin-right: 5vw;
+    margin-left: 5vw;
+}
+
+.card{
+    margin-right: 5vw;
+    margin-left: 5vw;
+    border: none;
+}
+
+.card-body{
+    display: block;
+    text-align: center;
+}
+
+h2{
+    margin-top:5vh;
+}
+
+hr{
+    margin: auto;
+    width: 20vw;
+    border:none;
+    background-color:#F987C5;
+    height:5px;
+    margin-bottom: 10vh;
+}

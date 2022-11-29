@@ -1,83 +1,209 @@
 <!DOCTYPE html>
-
 <!--Hero page-->
 <html>
 <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href = "genstyle.css" rel="stylesheet" type="text/css">
     <link href = "style.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="images/logo-main.png">
     <title>Home</title>
 </head>
 <body>
-    <!--Nav bar-->
-    <nav>
-        <img src="images/logo-main.png">
-        <a id="on-page" href="index.html">Home</a>
-        <a href="about-me.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+    <div class="container-fluid">
+        <!--Nav bar-->
+        <nav id="navbar" class="navbar navbar-expand-lg  sticky-top">
+            <a class="navbar-brand" href="index.html"><img src="images/logo-main.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about-me.html">About me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+              </ul>
+            </div>
+          </nav>
 
-    <div class="hero-main">
-        <div class="hero-grid-comp">
-            <img src="images/main-img.jpg">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                    <div class="keep-circular"><img src="images/main-img.jpg"></div>
+                    </div>
+                    <div class="col">
+                    <div class="hero-grid-comp">
+                        <p>
+                            <span>Hi! I'm <span id="nav-header">T</span></span>
+                            <br><br>
+                            Highschool student @ Menlo School | Software developer
+                            <ul>
+                                <li>⭐️ Machine Learning</li>
+                                <li>⭐️ VR Development</li>
+                                <li>⭐️ Image Processing</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="hero-grid-comp">
-            <p>
-                <span>Hi! I'm <span id="nav-header">T</span></span>
-                <br><br>
-                Highschool student @ Menlo School | Software developer
-                <ul>
-                    <li>⭐️ Machine Learning</li>
-                    <li>⭐️ VR Development</li>
-                    <li>⭐️ Image Processing</li>
-                </ul>
-            </p>
-        </div>
-    </div>
-    <h1>More about me!</h1>
-    <p style="margin-left: 10vw;"><i>Some of my hobbies</i></p>
-    <div class="more-about-me">
-        <div class="more-about-comp">
-            <img src="images/physics.jpg">
-            <p>Physics! ⚛️</p>
-        </div>
-        <div class="more-about-comp">
-            <img src="images/robotics.jpg">
-            <p>Robotics 🤖</p>
-        </div>
-        <div class="more-about-comp">
-            <img src="images/friends.jpg">
-            <p>Hanging out with friends 🤗</p>
-        </div>
-        <div class="more-about-comp">
-            <img src="images/soccer.jpg">
-            <p>Soccer ️⚽️</p>
-        </div>
-        <div class="more-about-comp">
-            <img src="images/xc.jpg">
-            <p>Cross Country 👟</p>
-        </div>
-        <div class="more-about-comp">
-            <img src="images/guitar.jpg">
-            <p>Electric Guitar 🎸</p>
-        </div>
-    </div>
 
-    <!--Fun animation :)-->
-    <script>
-        var nameElement = document.getElementById("nav-header"); 
-        var nameCounter = 0;
-        let nameTimer = setInterval(nameFunc, 300);
-        let nameStr = "aylor Tam"; 
+        <div class="end-j"></div>
+        <hr class="divider">
+        <h2>Some of my projects</h2>
+
+        <div class="row projects">
+            <div class="col">
+                <div class="row">
+                    <div class="card-deck">
+                        <div class="card">
+                          <img class="card-img-top" src="images/pacman.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Pac Man</h5>
+                            <p class="card-text">Pacman recreation in Java (for APCSA final project)! Random maze generation using DFS, custom pacman finding for each ghost, animations, cool graphics, and sound effects. Super fun project!</p>
+                          </div>
+                          <div class="card-footer">
+                            <small class="text-muted">2020</small>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <img class="card-img-top" src="images/battleship.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Battleship</h5>
+                            <p class="card-text">Like the board game "Battleship" but make it Java with sound effects! This was my first time experimenting with adding sound to Java games, randomly placing ships, and making my own packages for organization.</p>
+                          </div>
+                          <div class="card-footer">
+                            <small class="text-muted">2020</small>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <img class="card-img-top" src="images/digdug.png" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Dig Dug</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                          </div>
+                          <div class="card-footer">
+                            <small class="text-muted">2021</small>
+                          </div>
+                        </div>
+                        <div class="card">
+                            <img class="card-img-top" src="images/flappybird.jpeg" alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">Flappy Bird</h5>
+                              <p class="card-text">My first JS project! Just a very simple version of flappy bird, used similar graphics to the actual game, but sentimental :)</p>
+                            </div>
+                            <div class="card-footer">
+                              <small class="text-muted">2015</small>
+                            </div>
+                          </div>
+                          <div class="card">
+                            <img class="card-img-top" src="images/tissue-area.png" alt="Card image cap">
+                            <div class="card-body">
+                              <h5 class="card-title">Image Contouring</h5>
+                              <p class="card-text">Cool project to test morphological operators, blurring and sharpening kernels, and thresholding (Gaussian adaptive thresholding).</p>
+                            </div>
+                            <div class="card-footer">
+                              <small class="text-muted">2022</small>
+                            </div>
+                          </div>
+                      </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider">
+        <h2>Hobbies!</h2>
+
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/carousel/guitar.jpg" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Electric Guitar 🎸</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/carousel/soccer.JPG" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Soccer ️⚽️</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/carousel/friends.jpg" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Hanging out with friends 🤗</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/carousel/robotics.jpg" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Robotics 🤖</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/carousel/xc.jpg" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Running 👟</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/carousel/physics-jokes.jpg" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Physics jokes! ;) ⚛️</h5>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center text-lg-start bg-light text-muted">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Taylor Tam</h6>
+                    <p>Software developer & Higschool student at Menlo</p>
+                </div>
+
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+                    <p><a href="about-me.html" class="text-reset">About Page</a></p>
+                    <p><a href="contact.html" class="text-reset">More contact info</a></p>
+                </div>
         
-        function nameFunc() {
-            var currStr = nameElement.innerHTML; 
-            var add = nameStr.charAt(nameCounter); 
-            nameElement.innerHTML = currStr + add; 
-            nameCounter += 1;
-            if(nameCounter > nameStr.length){
-                clearInterval(nameTimer); 
-            }
-        }
-    </script>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                    <p>Palo Alto, California, U.S.</p>
+                    <p>taylor@taylortam.com</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+     <!-- Your Content ABOVE this Line -->
+     <script src="scripts/index.js"></script>
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
