@@ -1,6 +1,6 @@
 # ATCS-2022
-Taylor Tam
-Menlo
+Taylor Tam \n
+Menlo \n
 C block
 
 # Project 1 - Portfolio Project
