@@ -1,6 +1,6 @@
 # ATCS-2022
-Taylor Tam \n
-Menlo \n
+Taylor Tam
+Menlo
 C block
 
 # Project 1 - Portfolio Project
@@ -9,3 +9,5 @@ C block
 - Home page: main image, brief overview, some about me
 - Experience/About: about paragraph, experience (some experiments with buttons, animations)
 - Contact: Just images w/ links
+
+# Project 2 - Twitter Project
