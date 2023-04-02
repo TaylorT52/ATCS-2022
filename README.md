@@ -9,3 +9,5 @@ C block
 - Home page: main image, brief overview, some about me
 - Experience/About: about paragraph, experience (some experiments with buttons, animations)
 - Contact: Just images w/ links
+
+# Project 2 - Twitter Project
