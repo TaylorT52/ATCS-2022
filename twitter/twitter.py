@@ -109,32 +109,100 @@ class Twitter:
             following = Follower(follower_id = self.logged_in.username, following_id = follow.username)
             db_session.add(following)
             db_session.commit()
-            print("You are now following " + follow)
+            print("You are now following " + str(follow))
 
         self.run()
 
     def unfollow(self):
-        pass
+        user = input("Who would you like to unfollow? ")
+        user = db_session.query(User).where(User.username == user).first()
+        
+        if user == None:
+            print("This user does not exist. Try again.")
+        elif user not in self.logged_in.following:
+            print("You don't follow " + str(user))
+        else:
+            to_del = db_session.query(Follower).where((Follower.following_id == user.username) & (Follower.follower_id == self.logged_in.username)).first()
+            db_session.delete(to_del)
+            db_session.commit()
+            print("You have now unfollowed " + str(user))
+
+        self.run()
 
     def tweet(self):
-        pass
+        tweet_content = input("Create Tweet: ")
+        tags = input("Add tags: ")
+        tags = list(filter(lambda x: not x == "", tags.split("#")))
+        timestamp = str(datetime.now())
+        tweet = Tweet(content = tweet_content, timestamp = timestamp, username = self.logged_in.username)
+        db_session.add(tweet)
+        db_session.commit()
+
+        for tag_content in tags:
+            existing = db_session.query(Tag).where(tag_content == Tag.content).first()
+            if existing == None:
+                add = Tag(content = tag_content)
+                existing = add
+                db_session.add(add)
+            rel = TweetTag(tweet_id = tweet.id, tag_id = existing.id)
+            db_session.add(rel)
+            db_session.commit()
+
+        self.run()
     
     def view_my_tweets(self):
-        pass
+        tweets = db_session.query(Tweet).where(Tweet.username == self.logged_in.username).all()
+        for my_tweet in tweets:
+            print("==================")
+            print(my_tweet)
+            print("==================")
+        self.run()
     
     """
     Prints the 5 most recent tweets of the 
     people the user follows
     """
     def view_feed(self):
-        pass
+        valid_tweets = db_session.query(Tweet).all()
+        following = list(map(lambda x: x.username, self.logged_in.following))
+        valid_tweets = list(filter(lambda x: x.username in following, valid_tweets))
+
+        for count, tweet in enumerate(reversed(valid_tweets)):
+            if count < 5:
+                print("==================")
+                print(tweet)
+                print("==================")
+
+        self.run()
 
     def search_by_user(self):
-        pass
+        user = input("What user's tweets would you like to see? ")
+        if not user in list(itertools.chain(*db_session.query(User.username).all())):
+            print("This user does not exist.")
+        else:
+            tweets = db_session.query(Tweet).where(Tweet.username == user)
+            for tweet in tweets:
+                print("==================")
+                print(tweet)
+                print("==================")
+        self.run()
 
     def search_by_tag(self):
-        pass
+        test_tag = input("What tag would you like to search for? ").replace("#", "")
+        test_tag = db_session.query(Tag).where(Tag.content == test_tag).first()
+        tweets = db_session.query(Tweet).all()
+        tweets = list(filter(lambda x: test_tag in x.tags, tweets))
 
+        for tweet in tweets:
+            print("==================")
+            print(tweet)
+            print("==================")
+
+        if len(tweets) == 0:
+            print("No tweets exist with this tag!")
+            
+        self.run()
+   
     """
     Allows the user to select from the 
     ATCS Twitter Menu

@@ -4,7 +4,7 @@ that will be used to create objects
 and connect to data tables.
 """
 
-from sqlalchemy import ForeignKey, Column, INTEGER, TEXT, DATETIME
+from sqlalchemy import ForeignKey, Column, INTEGER, TEXT, DATETIME, Sequence
 from sqlalchemy.orm import relationship
 from database import Base
 
@@ -39,6 +39,10 @@ class Follower(Base):
     follower_id = Column('follower_id', TEXT, ForeignKey('users.username'))
     following_id = Column('following_id', TEXT, ForeignKey('users.username'))
 
+    #for debugging purposes 
+    def __repr__(self):
+        return self.follower_id + " follows " + self.following_id
+
 class Tweet(Base):
     __tablename__ = "tweets"
 
@@ -52,7 +56,7 @@ class Tweet(Base):
     tags = relationship("Tag", secondary="tweettags", back_populates="tweets")
 
     def __repr__(self):
-        return "@" + self.username + "\n " + self.content + "\n " + self.tags + "\n " + self.timestamp
+        return "@" + self.username + "\n " + self.content + "\n " + str(self.tags) + "\n " + self.timestamp
 
 class Tag(Base):
     __tablename__ = "tags"
@@ -64,12 +68,12 @@ class Tag(Base):
     tweets = relationship("Tweet", secondary="tweettags", back_populates="tags")
 
     def __repr__(self):
-        return "#" + self.tag
+        return "#" + self.content
 
 class TweetTag(Base):
     __tablename__ = "tweettags"
 
     #Columns
     id = Column("id", INTEGER, primary_key=True)
-    tweet_id = Column("tweet_id", ForeignKey(Tweet.id), primary_key=True)
-    tag_id = Column("tag_id", ForeignKey(Tag.id), primary_key=True)
+    tweet_id = Column("tweet_id", ForeignKey(Tweet.id))
+    tag_id = Column("tag_id", ForeignKey(Tag.id))
