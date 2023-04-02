@@ -15,6 +15,7 @@ class User(Base):
     username = Column("username", TEXT, primary_key=True)
     password = Column("password", TEXT, nullable=False)
 
+    tweets = relationship("Tweet", back_populates="users")
     following = relationship("User", 
                              secondary="followers",
                              primaryjoin="User.username==Follower.follower_id",
@@ -36,13 +37,30 @@ class Follower(Base):
     following_id = Column('following_id', TEXT, ForeignKey('users.username'))
 
 class Tweet(Base):
-    # TODO: Complete the class
-    pass
+    __tablename__ = "tweets"
+
+    #Columns
+    id = Column("id", INTEGER, primary_key=True)
+    content = Column("content", TEXT)
+    timestamp = Column("timestamp", TEXT)
+    username = Column(TEXT, ForeignKey(User.username))
+
+    users = relationship("User", back_populates="tweets")
+    tags = relationship("Tag", secondary="tweettags", back_populates="tweets")
 
 class Tag(Base):
-    # TODO: Complete the class
-    pass
+    __tablename__ = "tags"
+
+    #Columns
+    id = Column("id", INTEGER, primary_key=True)
+    content = Column("content", TEXT)
+
+    tweets = relationship("Tweet", secondary="tweettags", back_populates="tags")
 
 class TweetTag(Base):
-    # TODO: Complete the class
-    pass
+    __tablename__ = "tweettags"
+
+    #Columns
+    id = Column("id", INTEGER, primary_key=True)
+    tweet_id = Column("tweet_id", ForeignKey(Tweet.id), primary_key=True)
+    tag_id = Column("tag_id", ForeignKey(Tag.id), primary_key=True)
