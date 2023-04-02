@@ -26,6 +26,9 @@ class User(Base):
                              primaryjoin="User.username==Follower.following_id",
                              secondaryjoin="User.username==Follower.follower_id",
                              overlaps="following")
+    
+    def __repr__(self):
+        return "@" + self.username
 
 
 class Follower(Base):
@@ -48,6 +51,9 @@ class Tweet(Base):
     users = relationship("User", back_populates="tweets")
     tags = relationship("Tag", secondary="tweettags", back_populates="tweets")
 
+    def __repr__(self):
+        return "@" + self.username + "\n " + self.content + "\n " + self.tags + "\n " + self.timestamp
+
 class Tag(Base):
     __tablename__ = "tags"
 
@@ -56,6 +62,9 @@ class Tag(Base):
     content = Column("content", TEXT)
 
     tweets = relationship("Tweet", secondary="tweettags", back_populates="tags")
+
+    def __repr__(self):
+        return "#" + self.tag
 
 class TweetTag(Base):
     __tablename__ = "tweettags"

@@ -38,7 +38,16 @@ class Twitter:
     is guaranteed to be logged in after this function.
     """
     def register_user(self):
-        pass
+        repeat = False
+        existing_users = db_session.query(User.username).all()
+        while not repeat:
+            name = input("What will your Twitter handle be? ")
+            if name in existing_users:
+                repeat = True
+                break
+            pswd = input("Enter a password: ")
+            retry = input("Reenter your password: ")
+            repeat = pswd == retry
 
     """
     Logs the user in. The user
@@ -56,7 +65,15 @@ class Twitter:
     register, or exit.
     """
     def startup(self):
-        pass
+        choose = int(input("Please select a menu option \n 0. Login \n 1. Register User \n 2. Exit \n"))
+        if choose == 0:
+            self.login()
+        elif choose == 1:
+            self.register_user()
+        elif choose == 2:
+            self.end()
+        else:
+            print("Sorry, your input was invalid")
 
     def follow(self):
         pass
