@@ -1,8 +1,11 @@
 from models import *
 from database import init_db, db_session
 from datetime import datetime
+import itertools
 
 class Twitter:
+    logged_in = None
+
     """
     The menu to print once a user has logged in
     """
@@ -38,25 +41,45 @@ class Twitter:
     is guaranteed to be logged in after this function.
     """
     def register_user(self):
-        repeat = False
-        existing_users = db_session.query(User.username).all()
-        while not repeat:
+        user_repeat = True
+        valid_password = False
+        existing_users = list(itertools.chain(*db_session.query(User.username).all()))
+        
+        while user_repeat:
             name = input("What will your Twitter handle be? ")
-            if name in existing_users:
-                repeat = True
-                break
+            user_repeat = name in existing_users
+            if user_repeat:
+                print("That user already exists. Try again. \n")
+            
+        while not valid_password:
             pswd = input("Enter a password: ")
             retry = input("Reenter your password: ")
-            repeat = pswd == retry
+            valid_password = pswd == retry
+            if not valid_password:
+                print("That password is invalid. Try again \n")
+
+        new_user = User(username=name, password=pswd)
+        db_session.add(new_user)
+        db_session.commit()
+        self.logged_in = new_user
 
     """
     Logs the user in. The user
     is guaranteed to be logged in after this function.
     """
     def login(self):
-        pass
+        invalid = True
+        existing_users = db_session.query(User.username, User.password).all()
+        while invalid:
+            username = input("Input your username: ")
+            password = input("Input your password: ")
+            invalid = not (username, password) in existing_users
+            if invalid: 
+                print("Invalid username or password. Try again. \n")
 
-    
+        self.logged_in = db_session.query(User).where(User.username == username).first()
+        print("Success!")
+
     def logout(self):
         pass
 
@@ -76,7 +99,9 @@ class Twitter:
             print("Sorry, your input was invalid")
 
     def follow(self):
-        pass
+        print(self.logged_in)
+        print(self.logged_in.following)
+        username = input("Who would you like to follow? ")
 
     def unfollow(self):
         pass
@@ -111,7 +136,7 @@ class Twitter:
         self.startup()
 
         self.print_menu()
-        option = int(input(""))
+        option = int(input("Choose an option: "))
 
         if option == 1:
             self.view_feed()
