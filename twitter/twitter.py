@@ -99,9 +99,19 @@ class Twitter:
             print("Sorry, your input was invalid")
 
     def follow(self):
-        print(self.logged_in)
-        print(self.logged_in.following)
         username = input("Who would you like to follow? ")
+        follow = db_session.query(User).where(User.username == username).first()
+        if follow == None:
+            print("This user does not exist! Try again. \n")
+        elif follow in self.logged_in.following:
+            print("You already follow " + str(follow) + "! Try again. \n")
+        else: 
+            following = Follower(follower_id = self.logged_in.username, following_id = follow.username)
+            db_session.add(following)
+            db_session.commit()
+            print("You are now following " + follow)
+
+        self.run()
 
     def unfollow(self):
         pass
@@ -130,10 +140,11 @@ class Twitter:
     ATCS Twitter Menu
     """
     def run(self):
-        init_db()
+        if(self.logged_in == None):
+            init_db()
 
-        print("Welcome to ATCS Twitter!")
-        self.startup()
+            print("Welcome to ATCS Twitter!")
+            self.startup()
 
         self.print_menu()
         option = int(input("Choose an option: "))
