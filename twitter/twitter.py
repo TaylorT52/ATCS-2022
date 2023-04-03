@@ -133,7 +133,9 @@ class Twitter:
         tweet_content = input("Create Tweet: ")
         tags = input("Add tags: ")
         tags = list(filter(lambda x: not x == "", tags.split("#")))
+        tags = list(map(lambda x: x.strip(), tags))
         timestamp = str(datetime.now())
+
         tweet = Tweet(content = tweet_content, timestamp = timestamp, username = self.logged_in.username)
         db_session.add(tweet)
         db_session.flush()
@@ -144,6 +146,7 @@ class Twitter:
                 add = Tag(content = tag_content)
                 db_session.add(add)
                 existing = add
+                db_session.flush()
             rel = TweetTag(tweet_id = tweet.id, tag_id = existing.id)
             db_session.add(rel)
             db_session.flush()

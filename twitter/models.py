@@ -56,7 +56,7 @@ class Tweet(Base):
     tags = relationship("Tag", secondary="tweettags", back_populates="tweets")
 
     def __repr__(self):
-        return "@" + self.username + "\n " + self.content + "\n " + str(self.tags) + "\n " + self.timestamp
+        return "@" + self.username + "\n " + self.content + "\n " + ' '.join([str(elem) for elem in self.tags]) + "\n " + self.timestamp
 
 class Tag(Base):
     __tablename__ = "tags"
