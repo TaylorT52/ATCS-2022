@@ -81,7 +81,8 @@ class Twitter:
         print("Success!")
 
     def logout(self):
-        pass
+        logged_in = None
+        self.end()
 
     """
     Allows the user to login,  
@@ -152,10 +153,7 @@ class Twitter:
     
     def view_my_tweets(self):
         tweets = db_session.query(Tweet).where(Tweet.username == self.logged_in.username).all()
-        for my_tweet in tweets:
-            print("==================")
-            print(my_tweet)
-            print("==================")
+        self.print_tweets(tweets)
         self.run()
     
     """
@@ -165,13 +163,8 @@ class Twitter:
     def view_feed(self):
         valid_tweets = db_session.query(Tweet).all()
         following = list(map(lambda x: x.username, self.logged_in.following))
-        valid_tweets = list(filter(lambda x: x.username in following, valid_tweets))
-
-        for count, tweet in enumerate(reversed(valid_tweets)):
-            if count < 5:
-                print("==================")
-                print(tweet)
-                print("==================")
+        valid_tweets = list(filter(lambda x: x.username in following, valid_tweets))[-5:]
+        self.print_tweets(valid_tweets)
 
         self.run()
 
@@ -181,10 +174,7 @@ class Twitter:
             print("This user does not exist.")
         else:
             tweets = db_session.query(Tweet).where(Tweet.username == user)
-            for tweet in tweets:
-                print("==================")
-                print(tweet)
-                print("==================")
+            self.print_tweets(tweets)
         self.run()
 
     def search_by_tag(self):
@@ -192,15 +182,11 @@ class Twitter:
         test_tag = db_session.query(Tag).where(Tag.content == test_tag).first()
         tweets = db_session.query(Tweet).all()
         tweets = list(filter(lambda x: test_tag in x.tags, tweets))
-
-        for tweet in tweets:
-            print("==================")
-            print(tweet)
-            print("==================")
+        self.print_tweets(tweets)
 
         if len(tweets) == 0:
             print("No tweets exist with this tag!")
-            
+
         self.run()
    
     """
