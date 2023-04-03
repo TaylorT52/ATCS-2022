@@ -81,8 +81,7 @@ class Twitter:
         print("Success!")
 
     def logout(self):
-        logged_in = None
-        self.end()
+        self.logged_in = None
 
     """
     Allows the user to login,  
@@ -99,6 +98,7 @@ class Twitter:
         else:
             print("Sorry, your input was invalid")
 
+    #Follow users
     def follow(self):
         username = input("Who would you like to follow? ")
         follow = db_session.query(User).where(User.username == username).first()
@@ -112,8 +112,7 @@ class Twitter:
             db_session.commit()
             print("You are now following " + str(follow))
 
-        self.run()
-
+    #Unfollow users 
     def unfollow(self):
         user = input("Who would you like to unfollow? ")
         user = db_session.query(User).where(User.username == user).first()
@@ -123,13 +122,13 @@ class Twitter:
         elif user not in self.logged_in.following:
             print("You don't follow " + str(user))
         else:
+        #Previously got 3 on using SQL to insert, update, and delete data because data wasn't deleted on quiz - here is example :)
             to_del = db_session.query(Follower).where((Follower.following_id == user.username) & (Follower.follower_id == self.logged_in.username)).first()
             db_session.delete(to_del)
             db_session.commit()
             print("You have now unfollowed " + str(user))
 
-        self.run()
-
+    #creates tweet, tags, and then connects tweets and tags
     def tweet(self):
         tweet_content = input("Create Tweet: ")
         tags = input("Add tags: ")
@@ -137,28 +136,29 @@ class Twitter:
         timestamp = str(datetime.now())
         tweet = Tweet(content = tweet_content, timestamp = timestamp, username = self.logged_in.username)
         db_session.add(tweet)
-        db_session.commit()
+        db_session.flush()
 
         for tag_content in tags:
             existing = db_session.query(Tag).where(tag_content == Tag.content).first()
             if existing == None:
                 add = Tag(content = tag_content)
-                existing = add
                 db_session.add(add)
+                existing = add
             rel = TweetTag(tweet_id = tweet.id, tag_id = existing.id)
             db_session.add(rel)
-            db_session.commit()
+            db_session.flush()
 
-        self.run()
+        db_session.commit()
     
+    #See all personal tweets
     def view_my_tweets(self):
         tweets = db_session.query(Tweet).where(Tweet.username == self.logged_in.username).all()
         self.print_tweets(tweets)
-        self.run()
     
     """
     Prints the 5 most recent tweets of the 
     people the user follows
+    by getting all tweets and checking which are from ppl user follows, then get last 5 (so most recent)
     """
     def view_feed(self):
         valid_tweets = db_session.query(Tweet).all()
@@ -166,8 +166,7 @@ class Twitter:
         valid_tweets = list(filter(lambda x: x.username in following, valid_tweets))[-5:]
         self.print_tweets(valid_tweets)
 
-        self.run()
-
+    #Searches for tweet by user
     def search_by_user(self):
         user = input("What user's tweets would you like to see? ")
         if not user in list(itertools.chain(*db_session.query(User.username).all())):
@@ -175,8 +174,8 @@ class Twitter:
         else:
             tweets = db_session.query(Tweet).where(Tweet.username == user)
             self.print_tweets(tweets)
-        self.run()
 
+    #Searches for tweets by tag by finding tag, getting tweets then filtering
     def search_by_tag(self):
         test_tag = input("What tag would you like to search for? ").replace("#", "")
         test_tag = db_session.query(Tag).where(Tag.content == test_tag).first()
@@ -186,38 +185,36 @@ class Twitter:
 
         if len(tweets) == 0:
             print("No tweets exist with this tag!")
-
-        self.run()
    
     """
     Allows the user to select from the 
     ATCS Twitter Menu
     """
     def run(self):
-        if(self.logged_in == None):
-            init_db()
+        init_db()
 
-            print("Welcome to ATCS Twitter!")
-            self.startup()
+        print("Welcome to ATCS Twitter!")
+        self.startup()
 
-        self.print_menu()
-        option = int(input("Choose an option: "))
+        while not self.logged_in == None:
+            self.print_menu()
+            option = int(input("Choose an option: "))
 
-        if option == 1:
-            self.view_feed()
-        elif option == 2:
-            self.view_my_tweets()
-        elif option == 3:
-            self.search_by_tag()
-        elif option == 4:
-            self.search_by_user()
-        elif option == 5:
-            self.tweet()
-        elif option == 6:
-            self.follow()
-        elif option == 7:
-            self.unfollow()
-        else:
-            self.logout()
+            if option == 1:
+                self.view_feed()
+            elif option == 2:
+                self.view_my_tweets()
+            elif option == 3:
+                self.search_by_tag()
+            elif option == 4:
+                self.search_by_user()
+            elif option == 5:
+                self.tweet()
+            elif option == 6:
+                self.follow()
+            elif option == 7:
+                self.unfollow()
+            else:
+                self.logout()
         
         self.end()
